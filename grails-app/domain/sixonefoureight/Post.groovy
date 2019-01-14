@@ -2,7 +2,7 @@ package sixonefoureight
 
 class Post {
     User creator
-    List<ImageFile> images
+    ImageFile image
     List<Comment> comments
     long timestamp = System.currentTimeMillis()
 

@@ -10,10 +10,10 @@ class AppController {
 
     def getPosts() {
         render([posts: Post.list(sort: 'timestamp', order: 'desc').collect {
-            [id: it.id, creator: it.creator.email, images: it.images*.id, comments: it.comments.collect { 
+            [id: it.id, creator: it.creator.email, image: it.image.id, comments: it.comments.collect { 
                 [content: it.content, creator: it.creator.email, id: it.id]
             }]
-        }, user: session.email] as JSON)
+        }] as JSON)
     }
 
     def getPostImage() {
@@ -27,7 +27,7 @@ class AppController {
         Comment comment = new Comment(creator: session.email, content: params.content)
         post.comments << comment 
         if (post.save(flush: true)) {
-            render ([created:true, id: comment.id] as JSON)
+            render ([created:true, id: comment.id, user: session.email] as JSON)
         } else {
             println post.errors
             render ([created:false] as JSON)
@@ -37,9 +37,9 @@ class AppController {
     def savePost() {
         def file = request.getFile('image')
 
-        new Post(creator: User.findByEmail(session.email), images: [
+        new Post(creator: User.findByEmail(session.email), image:
             new ImageFile(name: file.originalFilename, contentType: file.contentType, imageData: file.bytes)
-        ]).save(flush: true)
+        ).save(flush: true)
 
         redirect action: 'index'
     }

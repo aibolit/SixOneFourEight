@@ -1,13 +1,13 @@
 class Post extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { comments: props.comments }
+        this.state = {comments: props.comments}
     }
 
     render() {
         console.log(this.props);
         var imageStyle = {
-            "backgroundImage": `url("getPostImage?id=${this.props.images[0]}")`
+            "backgroundImage": `url("getPostImage?id=${this.props.image}")`
         }
 
         var commentKey = (evt) => {
@@ -22,8 +22,8 @@ class Post extends React.Component {
                     body: form
                 }).then(r => r.json()).then(res => {
                     if (res.created) {
-                        entry.value="";
-                        this.state.comments.push({content: content, creator: this.props.user, id: res.id});
+                        entry.value = "";
+                        this.state.comments.push({content: content, creator: res.user, id: res.id});
                         this.forceUpdate();
                     } else console.error(res);
                 }).catch(console.error);

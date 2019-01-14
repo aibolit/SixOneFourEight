@@ -10,9 +10,7 @@ class BootStrap {
 
         def post = new Post(
             creator: user,
-            images: [
-                new ImageFile(name: 'a.png', contentType:"image/png", imageData: new File("grails-app/assets/images/apple-touch-icon.png").bytes)
-            ],
+            image: new ImageFile(name: 'a.png', contentType:"image/png", imageData: new File("grails-app/assets/images/apple-touch-icon.png").bytes),
             comments: [
                 new Comment(creator: user, content: 'very cool!'),
                 new Comment(creator: user, content: 'agreed')
@@ -22,9 +20,7 @@ class BootStrap {
 
         new Post(
             creator: user,
-            images: [
-                new ImageFile(name: 'a.png', contentType:"image/png", imageData: new File("grails-app/assets/images/apple-touch-icon.png").bytes)
-            ],
+            image: new ImageFile(name: 'a.png', contentType:"image/png", imageData: new File("grails-app/assets/images/apple-touch-icon.png").bytes),
             comments: [
                 new Comment(creator: user, content: 'very cool!'),
                 new Comment(creator: user, content: 'agreed')
