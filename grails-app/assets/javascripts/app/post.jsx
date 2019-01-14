@@ -18,6 +18,7 @@ class Post extends React.Component {
                 form.append('id', this.props.postId);
                 form.append('content', content);
                 fetch('addComment', {
+                    credentials: 'include',
                     method: 'post',
                     body: form
                 }).then(r => r.json()).then(res => {

@@ -11,6 +11,7 @@ out/
 .settings
 .classpath
 grails-app/assets/node_modules
+grails-app/assets/vendor
 .vscode
 bin
 *.db

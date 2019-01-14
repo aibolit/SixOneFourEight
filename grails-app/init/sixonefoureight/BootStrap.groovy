@@ -5,7 +5,6 @@ class BootStrap {
     def init = { servletContext ->
         def user = new User(email: 'test@test.test')
         user.save(flush: true)
-        println user.errors
         
 
         def post = new Post(
@@ -16,7 +15,6 @@ class BootStrap {
                 new Comment(creator: user, content: 'agreed')
             ])
         post.save(flush: true)
-        println post.errors
 
         new Post(
             creator: user,

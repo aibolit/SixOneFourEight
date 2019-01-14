@@ -25,7 +25,7 @@ class Posts extends React.Component {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('getPosts').then(r => r.json()).then(data => {
+    fetch('getPosts', {credentials: 'include'}).then(r => r.json()).then(data => {
         console.log(data);
 
         ReactDOM.render(<Posts {...data} />, document.getElementById('root'));
