@@ -5,8 +5,5 @@ class Comment {
     String content
     long timestamp = System.currentTimeMillis()
 
-    static constraints = {
-    }
-
     static belongsTo = Post
 }

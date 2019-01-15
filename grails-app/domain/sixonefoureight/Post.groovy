@@ -6,9 +6,5 @@ class Post {
     List<Comment> comments
     long timestamp = System.currentTimeMillis()
 
-
     static belongsTo = User
-
-    static constraints = {
-    }
 }

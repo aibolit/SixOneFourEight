@@ -5,11 +5,9 @@ class ImageFile {
     String name
     String contentType
 
-    static constraints = {
-    }
-
     static mapping = {
         imageData sqlType: 'longblob'
     }
+    
     static belongsTo = Post
 }
