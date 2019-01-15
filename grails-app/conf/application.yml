@@ -114,7 +114,7 @@ environments:
         dataSource:
             dialect: org.hibernate.dialect.MySQL5InnoDBDialect
             driverClassName: com.mysql.jdbc.Driver
-            dbCreate: none
+            dbCreate: update
             properties:
                 jmxEnabled: true
                 initialSize: 5
