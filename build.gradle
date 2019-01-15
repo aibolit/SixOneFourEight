@@ -79,7 +79,7 @@ assets {
     minifyJs = true
     minifyCss = true
 
-    includes = ['*', 'app/**/*']
+    includes = ['*', 'app/**/*', 'login/**/*']
     excludes = ['**/*']
 }
 
