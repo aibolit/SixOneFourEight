@@ -1,8 +1,12 @@
 package sixonefoureight
 
+import grails.util.Environment
+
 class BootStrap {
 
     def init = { servletContext ->
+        if (Environment.getCurrent() != Environment.DEVELOPMENT) return
+
         def user = new User(email: 'test@test.test')
         user.save(flush: true)
         
