@@ -3,8 +3,6 @@ var ReactDOM = require('react-dom')
 
 var Post = require('post.js')
 
-
-
 class Posts extends React.Component {
     constructor(props) {
         super(props);
@@ -21,7 +19,6 @@ class Posts extends React.Component {
             }
         </div>
     }
-
 }
 
 document.addEventListener('DOMContentLoaded', () => {

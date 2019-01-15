@@ -9,10 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
         var reader = new FileReader();
 
         reader.addEventListener("load", function () {
-            console.log(reader);
             var result = reader.result;
             var mime = result.substring(result.indexOf(':') + 1, result.indexOf(';'));
-            if (mime.substring(0, 'image'.length) !== 'image' ) {
+            if (mime.substring(0, 'image'.length) !== 'image') {
                 entry.value = "";
 
                 document.querySelector('.error-message').textContent = "Error: bad file type: " + mime
@@ -26,7 +25,5 @@ document.addEventListener('DOMContentLoaded', () => {
         if (file) {
             reader.readAsDataURL(file);
         }
-
-
     };
 });
