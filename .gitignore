@@ -15,3 +15,4 @@ grails-app/assets/vendor
 .vscode
 bin
 *.db
+~*

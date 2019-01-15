@@ -10,7 +10,7 @@
     <g:form action="login" class="login-form">
         <g:if test="${flash.message}"><label>${flash.message}</label></g:if>
         <input type="email" name="email" />
-        <g:actionSubmit value="Login" />
+        <g:submitButton name="submit" value="Login" />
     </g:form>
 </body>
 
